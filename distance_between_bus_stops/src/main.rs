@@ -19,10 +19,7 @@ impl Solution {
                                       destination: i32) -> i32 {
         let first = Solution::distance_inner(&distance, start as usize, destination as usize);
         let second = Solution::distance_inner(&distance, destination as usize, start as usize);
-        if first >= second {
-            return second;
-        }
-        return first;
+        first.min(second)
     }
 }
 
