@@ -1,22 +1,24 @@
 
-struct Solution;
-impl Solution {
-    pub fn contains_duplicate(nums: Vec<i32>) -> bool {
-        use std::collections::HashSet;
-        let mut set = HashSet::new();
-        nums.into_iter().any(|item| {
-            match set.get(&item) {
-                Some(_) => true,
-                None => {
-                    set.insert(item);
-                    false
-                }
-            }
-        })
+trait MyInterface {
+    fn get<T>() -> T;
+}
+
+struct MyStruct {
+    name: MyName
+}
+
+struct MyName {
+    pub name: String,
+}
+
+impl MyInterface for MyStruct {
+    fn get<MyName>() -> MyName {
+        MyName {
+            name: "jack".to_string(),
+        }
     }
 }
 
 fn main() {
-   let result = Solution::contains_duplicate(vec![1,1,1,3,3,4,3,2,4,2]); 
-   println!("{result}");
+    
 }
